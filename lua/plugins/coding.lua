@@ -10,4 +10,15 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+
+  -- add LSP
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        pyright = {},
+        ocamllsp = {},
+      },
+    },
+  },
 }
