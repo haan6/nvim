@@ -77,7 +77,12 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ocamllsp = {},
+        ocamllsp = {
+          mason = false,
+        },
+        clangd = {
+          mason = false,
+        },
       },
     },
   },
