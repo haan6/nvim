@@ -83,6 +83,9 @@ return {
         clangd = {
           mason = false,
         },
+        pyright = {
+          mason = false,
+        },
       },
     },
   },
