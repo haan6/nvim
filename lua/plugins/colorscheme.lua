@@ -1,16 +1,7 @@
 return {
-  -- Set the colorscheme
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nordic",
-    },
-  },
-
-  -- Add nordic
-  {
-    "AlexvZyl/nordic.nvim",
-    name = "nordic",
+    "jacoborus/tender.vim",
+    name = "tender",
     lazy = true,
   },
 
@@ -18,5 +9,13 @@ return {
     "folke/tokyonight.nvim",
     enable = false,
     lazy = true,
+  },
+
+  -- Set the colorscheme
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tender",
+    },
   },
 }
