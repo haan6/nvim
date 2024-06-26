@@ -69,8 +69,61 @@ return {
     end,
   },
 
+  -- auto pairs
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+    -- use opts = {} for passing setup options
+    -- this is equalent to setup({}) function
+    opts = {
+      ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol,
+      enable_check_bracket_line = false,
+      fast_wrap = {},
+    },
+  },
+
+  -- snippet
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    opts = {
+      -- enable autoriggered snippet
+      enable_autosnippets = true,
+      -- use tab to trigger visual selection
+      store_selection_keys = "<Tab>",
+    },
+  },
+
+  -- add latex
+  {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_compiler_latexmk = {
+        options = {
+          "-verbose",
+          "-file-line-error",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-shell-escape",
+        },
+      }
+    end,
+  },
+
   -- add latex unicoder
   { "joom/latex-unicoder.vim" },
+
+  -- handle LSP pop-ups
+  { "RishabhRD/popfix" },
+  { "RishabhRD/nvim-lsputils" },
 
   -- add LSP
   {
