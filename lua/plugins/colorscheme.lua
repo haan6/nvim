@@ -6,16 +6,16 @@ return {
   },
 
   {
-    "folke/tokyonight.nvim",
-    enable = false,
-    lazy = true,
+    "sainnhe/sonokai",
+    name = "sonokai",
+    lazy = false,
   },
 
   -- Set the colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tender",
+      colorscheme = "sonokai",
     },
   },
 }
