@@ -15,7 +15,7 @@ local function get_coq_path()
   if os.execute("test -d " .. opam_dir) == 0 then
     coq_path = opam_bin
   else
-    coq_path = os.getenv("HOME") .. "/.opam/default/bin"
+    coq_path = os.getenv("HOME") .. "/.opam/common/bin"
   end
 
   return coq_path

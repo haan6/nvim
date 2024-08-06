@@ -140,6 +140,9 @@ return {
           mason = false,
         },
       },
+      rust_analyzer = function()
+        return true
+      end,
     },
   },
 }
