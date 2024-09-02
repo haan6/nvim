@@ -9,18 +9,9 @@ return {
     "sainnhe/sonokai",
     name = "sonokai",
     lazy = false,
-  },
-
-  {
-    "projekt0n/github-nvim-theme",
-    name = "github_dark",
-    lazy = true,
-  },
-
-  {
-    "EdenEast/nightfox.nvim",
-    name = "nordfox",
-    lazy = true,
+    config = function()
+      vim.g.sonokai_style = "atlantis"
+    end,
   },
 
   -- Set the colorscheme
