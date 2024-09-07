@@ -8,9 +8,18 @@ return {
   {
     "sainnhe/sonokai",
     name = "sonokai",
-    lazy = false,
+    lazy = true,
     config = function()
       vim.g.sonokai_style = "atlantis"
+    end,
+  },
+
+  {
+    "kaicataldo/material.vim",
+    name = "material",
+    lazy = false,
+    config = function()
+      vim.g.material_theme_style = "darker"
     end,
   },
 
@@ -18,7 +27,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "sonokai",
+      colorscheme = "material",
     },
   },
 }
