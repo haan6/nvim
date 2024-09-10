@@ -1,11 +1,5 @@
 return {
   {
-    "jacoborus/tender.vim",
-    name = "tender",
-    lazy = true,
-  },
-
-  {
     "sainnhe/sonokai",
     name = "sonokai",
     lazy = true,

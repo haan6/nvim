@@ -2,6 +2,28 @@ return {
   -- add Coqtail
   { "whonore/Coqtail" },
 
+  -- add leanprover
+  {
+    "Julian/lean.nvim",
+    event = { "BufReadPre *.lean", "BufNewFile *.lean" },
+
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      -- you also will likely want nvim-cmp or some completion engine
+    },
+
+    opts = {
+      lsp = {},
+      mappings = true,
+    },
+  },
+
+  -- add a plugin for unicodes
+  {
+    "jbyuki/nabla.nvim",
+  },
+
   -- add auto completion
   {
     "hrsh7th/nvim-cmp",
