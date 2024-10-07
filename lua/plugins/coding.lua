@@ -19,10 +19,31 @@ return {
     },
   },
 
-  -- add a plugin for unicodes
+  -- add markdown-preview
   {
-    "jbyuki/nabla.nvim",
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function(plugin)
+      if vim.fn.executable("npx") then
+        vim.cmd("!cd " .. plugin.dir .. " && cd app && npx --yes yarn install")
+      else
+        vim.cmd([[Lazy load markdown-preview.nvim]])
+        vim.fn["mkdp#util#install"]()
+      end
+    end,
+    init = function()
+      if vim.fn.executable("npx") then
+        vim.g.mkdp_filetypes = { "markdown" }
+      end
+    end,
   },
+
+  -- multi-cursors
+  { "mg979/vim-visual-multi" },
+
+  -- add a plugin for
+  { "jbyuki/nabla.nvim" },
 
   -- add auto completion
   {
@@ -109,7 +130,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
-    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     opts = {
@@ -127,7 +148,7 @@ return {
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
       -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_view_method = "skim"
       vim.g.vimtex_compiler_latexmk = {
         options = {
           "-verbose",

@@ -1,14 +1,5 @@
 return {
   {
-    "sainnhe/sonokai",
-    name = "sonokai",
-    lazy = true,
-    config = function()
-      vim.g.sonokai_style = "atlantis"
-    end,
-  },
-
-  {
     "kaicataldo/material.vim",
     name = "material",
     lazy = false,
